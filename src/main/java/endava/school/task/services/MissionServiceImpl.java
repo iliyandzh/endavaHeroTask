@@ -16,12 +16,18 @@ public class MissionServiceImpl implements MissionService{
 
     @Override
     public Optional<Mission> findById(Long id) {
-        return Optional.empty();
+        return missionRepo.findById(id);
     }
 
     @Override
-    public Mission save(Mission hero) {
-        return null;
+    public void deleteMission(Long id) {
+        missionRepo.deleteById(id);
     }
+
+    @Override
+    public Mission save(Mission mission) {
+        return missionRepo.save(mission);
+    }
+
 }
 

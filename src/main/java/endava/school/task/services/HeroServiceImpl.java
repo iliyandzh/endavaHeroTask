@@ -21,7 +21,13 @@ public class HeroServiceImpl implements HeroService {
     }
 
     @Override
+    public void deleteHero(Long id) {
+        heroRepo.deleteById(id);
+    }
+
+    @Override
     public Hero save(Hero hero) {
         return heroRepo.save(hero);
     }
+
 }
